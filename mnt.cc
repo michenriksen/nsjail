@@ -244,7 +244,9 @@ static bool remountPt(const mount_t& mpt) {
 	    {MS_MANDLOCK, ST_MANDLOCK},
 	    {MS_NOATIME, ST_NOATIME},
 	    {MS_NODIRATIME, ST_NODIRATIME},
+#if defined(ST_RELATIME)
 	    {MS_RELATIME, ST_RELATIME},
+#endif
 	};
 
 	const unsigned long per_mountpoint_flags =
